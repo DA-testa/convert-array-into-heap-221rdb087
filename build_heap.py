@@ -37,7 +37,22 @@ def heap_sort(data):
                 break
     return swaps
 def main():
-    n = int(input())
+    source = input().strip()
+    if source == "I":
+        n = input()
+    elif source == "F":
+        file_name = input().strip()
+        if "a" in file_name:
+            sys.exit()
+        try:
+            with open(file_name, "r") as file:
+                n = int(file.readline().strip())
+                parents = list(map(int, file.readline().strip().split()))
+        except FileNotFoundError:
+            sys.exit()
+    else:
+        sys.exit()
+        
     data = list(map(int, input().split()))
     swaps = heap_sort(data)
     print(len(swaps))
