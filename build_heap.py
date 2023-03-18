@@ -36,20 +36,13 @@ def heap_sort(data):
             else:
                 break
     return swaps
-
 def main():
-    data = []
-    n = input().strip()
-    try:
-        n = int(n)
+    n = int(input())
         data = list(map(int, input().split()))
-    except ValueError:
-        data = list(n)
-        n = len(data)
-    swaps = heap_sort(data)
-    print(len(swaps))
-    for i, j in swaps:
-        print(i, j)
+        swaps = heap_sort(data)
+        print(len(swaps))
+        for i, j in swaps:
+            print(i, j)
 
         
 if __name__ == "__main__":
