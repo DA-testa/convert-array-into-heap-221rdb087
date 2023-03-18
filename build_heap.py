@@ -16,7 +16,6 @@ def build_heap(data):
             else:
                 break
     return swaps
-
 def heap_sort(data):
     swaps = build_heap(data)
     n = len(data)
@@ -38,30 +37,12 @@ def heap_sort(data):
     return swaps
 
 def main():
-
-    source = input()
-
-    if source == 'I':
-        n = int(input())
-        data = list(map(int, input().split()))
-    elif source == 'F':
-        filename = input()
-        with open(filename, 'r') as f:
-            n = int(f.readline().strip())
-            data = list(map(int, f.readline().strip().split()))
-    else:
-        print()
-        return
-
-    assert len(data) == n
-
-    assert all(isinstance(i, (int, float)) for i in data)
-
-    swaps = build_heap(data)
+    n = int(input())
+    data = list(map(int, input().split()))
+    swaps = heap_sort(data)
     print(len(swaps))
     for i, j in swaps:
         print(i, j)
 
 if __name__ == "__main__":
     main()
-
