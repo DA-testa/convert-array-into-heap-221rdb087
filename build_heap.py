@@ -38,7 +38,7 @@ def heap_sort(data):
     return swaps
 
 def main():
-    n = int(input())
+    n = input()
     data = list(map(int, input().split()))
     swaps = heap_sort(data)
     print(len(swaps))
