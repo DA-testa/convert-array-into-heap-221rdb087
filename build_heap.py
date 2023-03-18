@@ -42,11 +42,7 @@ def main():
     n = int(input())
     if fmt == 'I':
         data = list(map(int, input().split()))
-    elif fmt == 'F':
-        data = list(map(float, input().split()))
-    else:
-        print("Invalid input format")
-        return
+   
     swaps = heap_sort(data)
     print(len(swaps))
     for i, j in swaps:
