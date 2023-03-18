@@ -16,6 +16,7 @@ def build_heap(data):
             else:
                 break
     return swaps
+
 def heap_sort(data):
     swaps = build_heap(data)
     n = len(data)
@@ -37,8 +38,15 @@ def heap_sort(data):
     return swaps
 
 def main():
-    n = int(input().strip())
-    data = list(map(int, input().strip().split()))
+    fmt = input()
+    n = int(input())
+    if fmt == 'I':
+        data = list(map(int, input().split()))
+    elif fmt == 'F':
+        data = list(map(float, input().split()))
+    else:
+        print("Invalid input format")
+        return
     swaps = heap_sort(data)
     print(len(swaps))
     for i, j in swaps:
