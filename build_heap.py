@@ -15,7 +15,7 @@ def build_heap(data):
                 j = k
             else:
                 break
-    return swaps
+    return data, swaps
 
 def heap_sort(data):
     swaps = build_heap(data)
@@ -47,7 +47,6 @@ def main():
         try:
             with open(file_name, "r") as file:
                 n = int(file.readline().strip())
-                parents = list(map(int, file.readline().strip().split()))
         except FileNotFoundError:
             sys.exit()
     else:
