@@ -38,11 +38,11 @@ def heap_sort(data):
     return swaps
 def main():
     n = int(input())
-        data = list(map(int, input().split()))
-        swaps = heap_sort(data)
-        print(len(swaps))
-        for i, j in swaps:
-            print(i, j)
+    data = list(map(int, input().split()))
+    swaps = heap_sort(data)
+    print(len(swaps))
+    for i, j in swaps:
+        print(i, j)
 
         
 if __name__ == "__main__":
